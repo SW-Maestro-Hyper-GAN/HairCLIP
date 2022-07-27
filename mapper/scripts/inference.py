@@ -85,7 +85,7 @@ def run(test_opts):
 						couple_output = torch.cat([result_batch[2][0].unsqueeze(0), result_batch[0][0].unsqueeze(0), img_tensor[:,:,:,0:1024], img_tensor[:,:,:,1024::]])
 				else:
 					couple_output = torch.cat([result_batch[2][0].unsqueeze(0), result_batch[0][0].unsqueeze(0)])
-				couple_output = couple_output[1:];
+				couple_output = couple_output[1];
 				torchvision.utils.save_image(couple_output, os.path.join(out_path_results, f"{im_path}-{str(i).zfill(4)}-{selected_description}.jpg"), normalize=True, range=(-1, 1))
 			global_i += 1
 
